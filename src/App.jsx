@@ -1,6 +1,10 @@
+import { useState } from "react"
 import "./styles.css"
 
+
 export default function App() {
+  const [inputText, setInputText] = useState("")
+
 	return (
 	<>
 	<div className="tutorial-half">
@@ -11,7 +15,7 @@ export default function App() {
 	<h1>Input Half</h1>
 	<form className="new-item-form">
 		<div className="form-row">
-			<input type="text" id="item"/>
+			<input value={inputText} onChange={e => setInputText(e.target.value)} type="text" id="item"/>
 
 		</div>
 	</form>

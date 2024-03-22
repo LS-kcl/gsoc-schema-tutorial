@@ -1,7 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+}
+
 .tutorial-half{
-	display: inline-block;
+  flex: 50%;
 }
 
 .input-half{
-	display: inline-block;
+  flex: 50%;
 }
+

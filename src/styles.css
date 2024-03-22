@@ -12,5 +12,25 @@
 
 .input-half{
   flex: 50%;
+  height: 300px;
+}
+
+.new-item-form{
+  height: 300px;
+}
+
+.form-row{
+  height: 300px;
+}
+
+.form-row{
+  height: 300px;
+}
+
+
+.fill-area{
+  height: 300px%;
+  width: 100%;
+  box-sizing: border-box;
 }
 

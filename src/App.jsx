@@ -1,5 +1,6 @@
 import { useState } from "react"
-import "./styles.css"
+// import "./styles.css"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function App() {
@@ -10,17 +11,17 @@ export default function App() {
   }
 
 	return (
-	<div className="page">
-    <div className="tutorial-half">
+	<div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div className="col-6">
       <h1>Tutorial Half</h1>
       <h3>Rendered text from the input:</h3>
       <p>{inputText}</p>
     </div>
-    <div className="input-half">
+    <div className="col-6">
     <h1>Input Half</h1>
     <form className="new-item-form">
       <div className="form-row">
-        <input value={inputText} onChange={e => setInputText(e.target.value)} type="text" id="item"/>
+        <input className="form-control input-lg fill-area" value={inputText} onChange={e => setInputText(e.target.value)} type="text" id="item"/>
       </div>
     </form>
     </div>

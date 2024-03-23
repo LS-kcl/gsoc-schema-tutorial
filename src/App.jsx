@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import TutorialText from './components/TutorialText.jsx'
 import NavBar from './components/NavBar.jsx'
 import InteractiveEditor from './components/InteractiveEditor.jsx'
-import CodeEditor from '@uiw/react-textarea-code-editor';
 
 
 export default function App() {

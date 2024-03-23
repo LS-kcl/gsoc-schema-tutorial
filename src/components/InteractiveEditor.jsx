@@ -2,7 +2,6 @@ import { useState } from "react"
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 export default function InteractiveEditor() {
-  const [inputText, setInputText] = useState("")
   const [inputCode, setInputCode] = useState("")
 
 return(
@@ -20,9 +19,13 @@ return(
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
 />
+      <div className="toolbar">
+        <button className="btn btn-light" style={{height: '40px',}}>Reset</button>
+        <button className="btn btn-primary" style={{height: '40px',}}>Check Answer</button>
+      </div>
       <h1>Bottom Pane</h1>
       <h3>Rendered text from the input:</h3>
-      <p>{inputText}</p>
+      <p>{inputCode}</p>
     </>
 )
   

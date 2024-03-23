@@ -1,8 +1,8 @@
 import { useState } from "react"
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
-export default function InteractiveEditor() {
-  const [inputCode, setInputCode] = useState("")
+export default function InteractiveEditor(props) {
+  const [inputCode, setInputCode] = useState(props.default_code)
 
 return(
     <>

@@ -11,6 +11,29 @@ export default function App() {
   }
 
 	return (
+  <>
+  <div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">JSON Schema</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Specification</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Documentation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tooling</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
 	<div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
     <div className="col-6">
       <h1>Tutorial Half</h1>
@@ -34,5 +57,6 @@ Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa
       <p>{inputText}</p>
     </div>
 	</div>
+  </>
 	)
 }

@@ -1,0 +1,20 @@
+[
+    {"title": "Welcome to JSON Schema!",
+    "default_code": "{\"testing\":\"test\"}",
+    "paragraphs": [
+       "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla",
+
+      "Paragraph 2: Maecenas porta finibus felis, ut fringilla odio. Donec dignissim dolor ut tincidunt porttitor. Proin scelerisque, tellus id placerat ornare, justo nisi eleifend ante, eu convallis dolor ante quis est. Ut sit amet ipsum eu urna tincidunt consequat. Vestibulum viverra semper mollis. Mauris suscipit quam id pretium hendrerit. Nunc egestas lectus eget arcu eleifend dictum. Pellentesque commodo elit accumsan felis elementum",
+
+      "Paragraph 3: Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa id erat aliquam lobortis. Suspendisse vulputate rhoncus metus, sit amet imperdiet dui dictum vel. Suspendisse potenti. Etiam consectetur tristique purus, eu viverra ligula"
+  ]},
+    {"title": "Your first schema",
+    "default_code": "{\"testing\":\"test\"}",
+    "paragraphs": [
+       "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla pretium",
+
+      "Paragraph 2: Maecenas porta finibus felis, ut fringilla odio. Donec dignissim dolor ut tincidunt porttitor. Proin scelerisque, tellus id placerat ornare, justo nisi eleifend ante, eu convallis dolor ante quis est. Ut sit amet ipsum eu urna tincidunt consequat. Vestibulum viverra semper mollis. Mauris suscipit quam id pretium hendrerit. Nunc egestas",
+
+      "Paragraph 3: Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa id erat aliquam lobortis. Suspendisse vulputate rhoncus metus, sit amet imperdiet dui"
+  ]}
+]

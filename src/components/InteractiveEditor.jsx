@@ -19,9 +19,9 @@ return(
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
 />
-      <div className="toolbar">
-        <button className="btn btn-light" style={{height: '40px',}}>Reset</button>
-        <button className="btn btn-primary" style={{height: '40px',}}>Check Answer</button>
+      <div className="toolbar col-md-12">
+          <button className="btn btn-light" style={{height: '40px',}}>Reset</button>
+          <button className="btn btn-primary" style={{height: '40px',}}>Check Answer</button>
       </div>
       <h1>Bottom Pane</h1>
       <h3>Rendered text from the input:</h3>

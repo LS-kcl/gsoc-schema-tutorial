@@ -11,8 +11,21 @@ export default function App() {
   // Keep track of current page in the tutorial
   const [pageNum, setPageNum] = useState(0)
 
-  // Take relevant page from json
-  const [pageJson, setPageJson] = useState(pages[pageNum])
+  // Next page
+  function nextPage() {
+    // Only increase page number if in bounds:
+    if (pageNum+1 < pages.length){
+      setPageNum(pageNum+1)
+    }
+  }
+
+  // Previous page
+  function prevPage() {
+    // Only decrease page number if in bounds:
+    if (pageNum-1 >= 0){
+      setPageNum(pageNum-1)
+    }
+  }
 
 	return (
   <>
@@ -21,10 +34,14 @@ export default function App() {
   </div>
 	<div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
     <div className="col-6">
-      <TutorialText text={pageJson.paragraphs}/>
+      <TutorialText
+            text={pages[pageNum].paragraphs}
+            prevPage={prevPage}
+            nextPage={nextPage}
+          />
     </div>
     <div className="col-6">
-      <InteractiveEditor default_code={pageJson.default_code}/>
+      <InteractiveEditor default_code={pages[pageNum].default_code}/>
     </div>
 	</div>
   </>

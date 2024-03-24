@@ -6,8 +6,16 @@ return(
         return (<p>{para}</p>)
       })}
       <div className="page-controls">
-          <button className="btn btn-secondary" style={{height: '40px',}}>Previous Page</button>
-          <button className="btn btn-secondary" style={{height: '40px',}}>Next Page</button>
+        <button
+          className="btn btn-secondary"
+          onClick={props.prevPage}
+          style={{height: '40px',}}>Previous Page
+        </button>
+        <button
+          className="btn btn-secondary"
+          onClick={props.nextPage}
+          style={{height: '40px',}}>Next Page
+        </button>
       </div>
     </>
 )

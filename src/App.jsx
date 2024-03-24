@@ -9,6 +9,23 @@ import page_1 from './page-data/page_1.json'
 
 
 export default function App() {
+  // Store page in state object (start at page 1)
+  const [pageJson, setPageJson] = useState(page_1)
+
+  // We start by taking page content from json
+  const [textObjects, setTextObjects] = useState(pageJson.text_objects)
+
+
+  // Function to swap between pages
+  function onChangePage(e){
+    // Get the "next_page" or "prev_page" as needed
+    // Fetch the needed page json from page-data (ideally already imported)
+    // Take relevant fields out from the page json
+    // Pass those fields into each setter object
+    // setTextObjects()
+  }
+  
+
 	return (
   <>
   <div>

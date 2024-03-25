@@ -9,7 +9,7 @@
       "Paragraph 3: Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa id erat aliquam lobortis. Suspendisse vulputate rhoncus metus, sit amet imperdiet dui dictum vel. Suspendisse potenti. Etiam consectetur tristique purus, eu viverra ligula"
   ]},
     {"title": "Your first schema",
-    "default_code": "{\"testing\":\"test\"}",
+    "default_code": "{}",
     "paragraphs": [
        "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla pretium",
 

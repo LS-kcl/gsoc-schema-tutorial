@@ -1,8 +1,25 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 export default function InteractiveEditor(props) {
+  // Keep track of code in editor
   const [inputCode, setInputCode] = useState(props.default_code)
+
+  // Keep track of default_code as well
+  const [defaultCode, setDefaultCode] = useState(props.default_code)
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `The code is: ${inputCode}`;
+    // If the default_code passed in from the prop does not match our default code
+    // stored (i.e. the page has been updated) 
+    if (props.default_code !== defaultCode) {
+      // Update the default code and set input code to default
+      setInputCode(props.default_code);
+      setDefaultCode(props.default_code);
+    }
+    
+  });
 
 return(
     <>

@@ -8,18 +8,28 @@ export default function InteractiveEditor(props) {
   // Keep track of default_code as well
   const [defaultCode, setDefaultCode] = useState(props.default_code)
 
+  // Keep track of execution output
+  const [consoleOutput, setConsoleOutput] = useState("")
+
   useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `The code is: ${inputCode}`;
     // If the default_code passed in from the prop does not match our default code
     // stored (i.e. the page has been updated) 
     if (props.default_code !== defaultCode) {
-      // Update the default code and set input code to default
+      // Update the default code, set input code to default, and clear output
       setInputCode(props.default_code);
       setDefaultCode(props.default_code);
+      setConsoleOutput("");
     }
     
   });
+
+  const resetCodeInput = () => {
+    setInputCode(defaultCode)
+  }
+
+  const textInputSchema = () => {
+    setConsoleOutput("Hello World! I have been rendered from the textInputSchema function")
+  }
 
 return(
     <>
@@ -37,12 +47,24 @@ return(
       }}
 />
       <div className="toolbar col-md-12">
-          <button className="btn btn-light" style={{height: '40px',}}>Reset</button>
-          <button className="btn btn-primary" style={{height: '40px',}}>Check Answer</button>
+          <button
+            onClick={() => resetCodeInput()}
+            className="btn btn-light"
+            style={{height: '40px',}}>
+            Reset
+          </button>
+          <button
+            onClick={() => textInputSchema()}
+            className="btn btn-primary"
+            style={{height: '40px',}}>
+            Check Answer
+          </button>
       </div>
       <h1>Bottom Pane</h1>
       <h3>Rendered text from the input:</h3>
-      <p>{inputCode}</p>
+      <p>
+        {consoleOutput}
+      </p>
     </>
 )
   

@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react"
+import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 export default function InteractiveEditor(props) {
-  // Keep track of code in editor
-  const [inputCode, setInputCode] = useState(props.default_code)
-
   // Keep track of default_code as well
+  // TYPE: JSON Object
   const [defaultCode, setDefaultCode] = useState(props.default_code)
 
+  // Keep track of code in editor
+  // TYPE: String
+  const [inputCode, setInputCode] = useState(JSON.stringify(defaultCode, null, 2))
+
   // Keep track of execution output
+  // TYPE: String
   const [consoleOutput, setConsoleOutput] = useState("")
 
   useEffect(() => {
@@ -16,7 +20,7 @@ export default function InteractiveEditor(props) {
     // stored (i.e. the page has been updated) 
     if (props.default_code !== defaultCode) {
       // Update the default code, set input code to default, and clear output
-      setInputCode(props.default_code);
+      setInputCode(JSON.stringify(props.default_code, null, 2));
       setDefaultCode(props.default_code);
       setConsoleOutput("");
     }
@@ -24,11 +28,26 @@ export default function InteractiveEditor(props) {
   });
 
   const resetCodeInput = () => {
-    setInputCode(defaultCode)
+    setInputCode(JSON.stringify(defaultCode, null, 2))
   }
 
-  const textInputSchema = () => {
-    setConsoleOutput("Hello World! I have been rendered from the textInputSchema function")
+  const textInputSchema = async () => {
+    // First parse the string into a json (ENSURE ERROR IS CAUGHT)
+    // Then register the schema (ENSURE ERROR IS CAUGHT)
+    // Finally check the schema against the test cases
+    registerSchema({
+      $schema: "https://json-schema.org/draft/2020-12/schema",
+      type: "string"
+    }, "http://example.com/schemas/string");
+
+    const output = await validate("http://example.com/schemas/string", "foo");
+    if (output.valid) {
+      setConsoleOutput(inputCode)
+      // setConsoleOutput("The instance is valid :)")
+    } else {
+      setConsoleOutput(inputCode)
+      // setConsoleOutput("The instance is not valid :(")
+    }
   }
 
 return(

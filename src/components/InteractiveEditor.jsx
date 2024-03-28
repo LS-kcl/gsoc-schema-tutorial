@@ -1,5 +1,5 @@
+import { Validator } from '@cfworker/json-schema';
 import { useState, useEffect } from "react"
-import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 export default function InteractiveEditor(props) {
@@ -31,22 +31,23 @@ export default function InteractiveEditor(props) {
     setInputCode(JSON.stringify(defaultCode, null, 2))
   }
 
-  const textInputSchema = async () => {
+  const textInputSchema = () => {
     // First parse the string into a json (ENSURE ERROR IS CAUGHT)
     // Then register the schema (ENSURE ERROR IS CAUGHT)
     // Finally check the schema against the test cases
-    registerSchema({
-      $schema: "https://json-schema.org/draft/2020-12/schema",
-      type: "string"
-    }, "http://example.com/schemas/string");
 
-    const output = await validate("http://example.com/schemas/string", "foo");
-    if (output.valid) {
-      setConsoleOutput(inputCode)
-      // setConsoleOutput("The instance is valid :)")
+    const validator = new Validator({ type: 'number' }, '2019-09');
+    const result = validator.validate("Hello world");
+    // var schema = {
+    //   $schema: "https://json-schema.org/draft/2020-12/schema",
+    //   type: "string"
+    // };
+    // output = v.validate("foo", schema);
+
+    if (result.valid) {
+      setConsoleOutput("Valid!")
     } else {
-      setConsoleOutput(inputCode)
-      // setConsoleOutput("The instance is not valid :(")
+      setConsoleOutput("Invalid")
     }
   }
 

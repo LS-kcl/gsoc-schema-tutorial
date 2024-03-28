@@ -33,16 +33,13 @@ export default function InteractiveEditor(props) {
 
   const textInputSchema = () => {
     // First parse the string into a json (ENSURE ERROR IS CAUGHT)
-    // Then register the schema (ENSURE ERROR IS CAUGHT)
-    // Finally check the schema against the test cases
+    const converted_schema = JSON.parse(inputCode)
 
-    const validator = new Validator({ type: 'number' }, '2019-09');
+    // Then register the schema (ENSURE ERROR IS CAUGHT)
+    const validator = new Validator(converted_schema, '2019-09');
+
+    // Finally check the schema against the test cases
     const result = validator.validate("Hello world");
-    // var schema = {
-    //   $schema: "https://json-schema.org/draft/2020-12/schema",
-    //   type: "string"
-    // };
-    // output = v.validate("foo", schema);
 
     if (result.valid) {
       setConsoleOutput("Valid!")

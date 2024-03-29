@@ -36,6 +36,7 @@ export default function App() {
     <div className="col-6">
       <TutorialText
             text={pages[pageNum].paragraphs}
+            title={pages[pageNum].title}
             prevPage={prevPage}
             nextPage={nextPage}
           />

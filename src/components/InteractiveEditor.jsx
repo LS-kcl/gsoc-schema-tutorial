@@ -15,7 +15,7 @@ export default function InteractiveEditor(props) {
 
   // Keep track of execution output
   // TYPE: String
-  const [consoleOutput, setConsoleOutput] = useState("")
+  const [consoleOutput, setConsoleOutput] = useState("Tests have not been run yet")
 
   // Keep track of test cases
   // TYPE: Array of test objects
@@ -28,7 +28,7 @@ export default function InteractiveEditor(props) {
       // Update the default code, set input code to default, and clear output
       setInputCode(JSON.stringify(props.default_code, null, 2));
       setDefaultCode(props.default_code);
-      setConsoleOutput("");
+      setConsoleOutput("Tests have not been run yet");
       setTestCases(props.test_cases);
     }
     
@@ -36,6 +36,7 @@ export default function InteractiveEditor(props) {
 
   const resetCodeInput = () => {
     setInputCode(JSON.stringify(defaultCode, null, 2))
+    setConsoleOutput("Tests have not been run yet")
   }
 
   const textInputSchema = () => {
@@ -64,14 +65,16 @@ export default function InteractiveEditor(props) {
 
     }
     catch(e) {
-      setConsoleOutput("This is not a well formed JSON Schema: " + e);
+      setConsoleOutput("Syntax error found in schema: check your code for missing brackets/commas, and reset code if needed")
+      // Alternative error message
+      // setConsoleOutput("This is not a well formed JSON Schema: " + e);
     }
 
   }
 
 return(
     <>
-      <h1>Input Half</h1>
+      <h1>Interactive Sandbox</h1>
       <CodeEditor
           value={inputCode}
           language="js"
@@ -89,16 +92,16 @@ return(
             onClick={() => resetCodeInput()}
             className="btn btn-light"
             style={{height: '40px',}}>
-            Reset
+            Reset Code
           </button>
           <button
             onClick={() => textInputSchema()}
             className="btn btn-primary"
             style={{height: '40px',}}>
-            Check Answer
+            Test Schema
           </button>
       </div>
-      <h1>Bottom Pane</h1>
+      <h3>Tests</h3>
         <Tabs>
           <TabList>
             <Tab>Overview</Tab>
@@ -106,7 +109,7 @@ return(
           </TabList>
 
           <TabPanel>
-            <h3>Rendered text from the input:</h3>
+            <h3>Test status:</h3>
             <p>
               {consoleOutput}
             </p>

@@ -16,6 +16,10 @@
       {
         "is_valid": false,
         "data": 42
+      },
+      {
+        "is_valid": false,
+        "data": {"nested-string":"I'm a string in an object"}
       }
     ],
     "paragraphs": [

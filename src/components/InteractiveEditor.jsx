@@ -42,11 +42,20 @@ export default function InteractiveEditor(props) {
       // Finally check the schema against the test cases
       const result = validator.validate("Hello world");
 
-      if (result.valid) {
-        setConsoleOutput("Valid!")
-      } else {
-        setConsoleOutput("Invalid")
+      var output = ""
+      var i = 1
+      for (const test in props.test_cases) {
+        const result = validator.validate(test);
+        if (result.valid) {
+            output += "Test " + i + ": Passed!\r\n";
+        } else {
+            output += "Test " + i + ": Failed\r\n";
+        }
+        i++;
       }
+
+      setConsoleOutput(output)
+
     } catch (e) {
       setConsoleOutput("This is not a well formed JSON Schema: " + e)
     }

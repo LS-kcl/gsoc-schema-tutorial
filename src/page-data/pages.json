@@ -4,6 +4,10 @@
       "$schema": "https://json-schema.org/draft/2020-12/schema",
       "type": "string"
     },
+    "test_cases": [
+      "Hello World",
+      "Sample string"
+    ],
     "paragraphs": [
        "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla",
 

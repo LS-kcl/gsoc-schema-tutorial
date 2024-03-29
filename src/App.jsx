@@ -41,7 +41,10 @@ export default function App() {
           />
     </div>
     <div className="col-6">
-      <InteractiveEditor default_code={pages[pageNum].default_code}/>
+      <InteractiveEditor
+            default_code={pages[pageNum].default_code}
+            test_cases={pages[pageNum].test_cases}
+          />
     </div>
 	</div>
   </>

@@ -1,5 +1,7 @@
 import { Validator } from '@cfworker/json-schema';
 import { useState, useEffect } from "react"
+import { Tabs, Tab, TabList, TabPanel } from "react-tabs"
+import 'react-tabs/style/react-tabs.css';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 export default function InteractiveEditor(props) {
@@ -15,6 +17,10 @@ export default function InteractiveEditor(props) {
   // TYPE: String
   const [consoleOutput, setConsoleOutput] = useState("")
 
+  // Keep track of test cases
+  // TYPE: Array of test objects
+  const [testCases, setTestCases] = useState(props.test_cases)
+
   useEffect(() => {
     // If the default_code passed in from the prop does not match our default code
     // stored (i.e. the page has been updated) 
@@ -23,6 +29,7 @@ export default function InteractiveEditor(props) {
       setInputCode(JSON.stringify(props.default_code, null, 2));
       setDefaultCode(props.default_code);
       setConsoleOutput("");
+      setTestCases(props.test_cases);
     }
     
   });
@@ -92,10 +99,22 @@ return(
           </button>
       </div>
       <h1>Bottom Pane</h1>
-      <h3>Rendered text from the input:</h3>
-      <p>
-        {consoleOutput}
-      </p>
+        <Tabs>
+          <TabList>
+            <Tab>Overview</Tab>
+            {testCases?.map((test) => <Tab>Test</Tab>)}
+          </TabList>
+
+          <TabPanel>
+            <h3>Rendered text from the input:</h3>
+            <p>
+              {consoleOutput}
+            </p>
+          </TabPanel>
+          {testCases?.map((test) => 
+              <TabPanel><h4>Expected Result: </h4><p>{test.is_valid.toString()}</p><h4>Test Case:</h4><p>{test.data}</p></TabPanel>)
+          }
+        </Tabs>
     </>
 )
   

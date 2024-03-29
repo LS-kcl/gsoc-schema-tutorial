@@ -5,8 +5,18 @@
       "type": "string"
     },
     "test_cases": [
-      "Hello World",
-      "Sample string"
+      {
+        "is_valid": true,
+        "data": "Hello World"
+      },
+      {
+        "is_valid": true,
+        "data": "Here's a sample string!"
+      },
+      {
+        "is_valid": false,
+        "data": 42
+      }
     ],
     "paragraphs": [
        "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla",

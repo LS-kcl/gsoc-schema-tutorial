@@ -34,30 +34,30 @@ export default function InteractiveEditor(props) {
   const textInputSchema = () => {
     // First parse the string into a json (ENSURE ERROR IS CAUGHT)
     try {
-      const converted_schema = JSON.parse(inputCode)
+      const converted_schema = JSON.parse(inputCode);
       // Then register the schema (ENSURE ERROR IS CAUGHT)
       // NOTE: this will not fail for invalid schemas
       const validator = new Validator(converted_schema, '2019-09');
 
       // Finally check the schema against the test cases
-      const result = validator.validate("Hello world");
-
-      var output = ""
-      var i = 1
-      for (const test in props.test_cases) {
-        const result = validator.validate(test);
-        if (result.valid) {
-            output += "Test " + i + ": Passed!\r\n";
+      var output = "";
+      var i = 1;
+      console.log(props.test_cases);
+      for (const test of props.test_cases) {
+        const result = validator.validate(test.data);
+        if (result.valid === test.is_valid) {
+            output += `Test ${i}: Passed! `;
         } else {
-            output += "Test " + i + ": Failed\r\n";
+            output += `Test ${i}: Failed `;
         }
         i++;
       }
 
-      setConsoleOutput(output)
+      setConsoleOutput(output);
 
-    } catch (e) {
-      setConsoleOutput("This is not a well formed JSON Schema: " + e)
+    }
+    catch(e) {
+      setConsoleOutput("This is not a well formed JSON Schema: " + e);
     }
 
   }

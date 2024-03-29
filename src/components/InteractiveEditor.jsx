@@ -102,7 +102,7 @@ return(
         <Tabs>
           <TabList>
             <Tab>Overview</Tab>
-            {testCases?.map((test) => <Tab>Test</Tab>)}
+            {[...Array(testCases.length).keys()].map((num) => <Tab>Test {num+1}</Tab>)}
           </TabList>
 
           <TabPanel>
@@ -112,7 +112,7 @@ return(
             </p>
           </TabPanel>
           {testCases?.map((test) => 
-              <TabPanel><h4>Expected Result: </h4><p>{test.is_valid.toString()}</p><h4>Test Case:</h4> <CodeEditor value={JSON.stringify(test.data, null, 2)} readOnly={true} language="js" padding={15} style={{ backgroundColor: "#f5f5f5", fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace', }} /> </TabPanel>)
+              <TabPanel><h4>Expected Result: </h4><code>{test.is_valid.toString()}</code><h4>Test Case:</h4> <CodeEditor value={JSON.stringify(test.data, null, 2)} readOnly={true} language="js" padding={15} style={{ backgroundColor: "#f5f5f5", fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace', }} /> </TabPanel>)
           }
         </Tabs>
     </>

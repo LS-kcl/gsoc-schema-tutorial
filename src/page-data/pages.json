@@ -2,13 +2,8 @@
     {"title": "Welcome to JSON Schema!",
     "default_code": {},
     "test_cases": [],
-    "paragraphs": [
-      "Welcome to the JSON schema tour! We're going to guide you through how to create a schema",
-
-      "Why would I want to create a schema? Schemas allow us to enforce some rules on the structure of a JSON file",
-
-      "View the next page to find out how!"
-  ]},
+    "page_source": "<p>Welcome to the JSON schema tour! We're going to guide you through how to create a schema</p> <p>Why would I want to create a schema? Schemas allow us to enforce some rules on the structure of a JSON file</p> <p>View the next page to find out how!</p>"
+  },
     {"title": "Your first schema",
     "default_code":{
       "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -32,11 +27,8 @@
         "data": {"nested-string":"I'm a string in an object"}
       }
     ],
-    "paragraphs": [
-      "Have a look at the schema to the left:",
-
-      "This is what a sample schema looks like!"
-  ]},
+    "page_source": "<p>Have a look at the schema to the left:</p><p>This is what a sample schema looks like!</p>"
+  },
     {"title": "Validating against empty schemas",
     "default_code":{
       "$schema": "https://json-schema.org/draft/2020-12/schema"
@@ -59,9 +51,6 @@
         "data": {"nested-string":"I'm a string in an object"}
       }
     ],
-    "paragraphs": [
-      "The schema provided does not have any rules associated with it. This means a well formed JSON of any type will pass",
-
-      "Run the tests to see!"
-  ]}
+    "page_source": "<p>The schema provided does not have any rules associated with it. This means a well formed JSON of any type will pass</p> <p>Run the tests to see!</p>"
+  }
 ]

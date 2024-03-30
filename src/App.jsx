@@ -35,7 +35,7 @@ export default function App() {
 	<div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
     <div className="col-6">
       <TutorialText
-            text={pages[pageNum].paragraphs}
+            page_source={pages[pageNum].page_source}
             title={pages[pageNum].title}
             prevPage={prevPage}
             nextPage={nextPage}

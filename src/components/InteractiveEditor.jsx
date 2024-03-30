@@ -105,7 +105,7 @@ return(
         <Tabs>
           <TabList>
             <Tab>Overview</Tab>
-            {[...Array(testCases.length).keys()].map((num) => <Tab>Test {num+1}</Tab>)}
+            {[...Array(testCases?.length).keys()].map((num) => <Tab>Test {num+1}</Tab>)}
           </TabList>
 
           <TabPanel>

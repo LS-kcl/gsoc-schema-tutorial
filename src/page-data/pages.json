@@ -1,5 +1,15 @@
 [
     {"title": "Welcome to JSON Schema!",
+    "default_code": {},
+    "test_cases": [],
+    "paragraphs": [
+      "Welcome to the JSON schema tour! We're going to guide you through how to create a schema",
+
+      "Why would I want to create a schema? Schemas allow us to enforce some rules on the structure of a JSON file",
+
+      "View the next page to find out how!"
+  ]},
+    {"title": "Your first schema",
     "default_code":{
       "$schema": "https://json-schema.org/draft/2020-12/schema",
       "type": "string"
@@ -23,19 +33,35 @@
       }
     ],
     "paragraphs": [
-       "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla",
+      "Have a look at the schema to the left:",
 
-      "Paragraph 2: Maecenas porta finibus felis, ut fringilla odio. Donec dignissim dolor ut tincidunt porttitor. Proin scelerisque, tellus id placerat ornare, justo nisi eleifend ante, eu convallis dolor ante quis est. Ut sit amet ipsum eu urna tincidunt consequat. Vestibulum viverra semper mollis. Mauris suscipit quam id pretium hendrerit. Nunc egestas lectus eget arcu eleifend dictum. Pellentesque commodo elit accumsan felis elementum",
-
-      "Paragraph 3: Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa id erat aliquam lobortis. Suspendisse vulputate rhoncus metus, sit amet imperdiet dui dictum vel. Suspendisse potenti. Etiam consectetur tristique purus, eu viverra ligula"
+      "This is what a sample schema looks like!"
   ]},
-    {"title": "Your first schema",
-    "default_code": {},
+    {"title": "Validating against empty schemas",
+    "default_code":{
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "test_cases": [
+      {
+        "is_valid": true,
+        "data": "Hello World"
+      },
+      {
+        "is_valid": true,
+        "data": "Here's a sample string!"
+      },
+      {
+        "is_valid": true,
+        "data": 42
+      },
+      {
+        "is_valid": true,
+        "data": {"nested-string":"I'm a string in an object"}
+      }
+    ],
     "paragraphs": [
-       "Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula luctus elit. Integer tempor neque eu eleifend aliquet. Etiam interdum turpis ante, at dignissim enim bibendum vel. Donec vitae nisl sapien. Quisque sed auctor risus. Nulla pretium",
+      "The schema provided does not have any rules associated with it. This means a well formed JSON of any type will pass",
 
-      "Paragraph 2: Maecenas porta finibus felis, ut fringilla odio. Donec dignissim dolor ut tincidunt porttitor. Proin scelerisque, tellus id placerat ornare, justo nisi eleifend ante, eu convallis dolor ante quis est. Ut sit amet ipsum eu urna tincidunt consequat. Vestibulum viverra semper mollis. Mauris suscipit quam id pretium hendrerit. Nunc egestas",
-
-      "Paragraph 3: Mauris sodales luctus elit, nec fringilla elit consectetur nec. In maximus massa id erat aliquam lobortis. Suspendisse vulputate rhoncus metus, sit amet imperdiet dui"
+      "Run the tests to see!"
   ]}
 ]

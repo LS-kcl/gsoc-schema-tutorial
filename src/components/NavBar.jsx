@@ -2,8 +2,8 @@ export default function NavBar() {
   
 return(
 <>
-  <nav class="navbar navbar-expand-md navbar-dark" style={{'box-shadow': '0px 3px 7px black'}}>
-    <a class="navbar-brand" href="#">JSON Schema</a>
+  <nav class="navbar navbar-expand-md navbar-dark" style={{'padding':'10px', 'box-shadow': '0px 3px 7px black'}}>
+    <a class="navbar-brand" href="#">A Tour of JSON Schema</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

@@ -2,11 +2,11 @@
 $body-bg: #1e293b;
 $body-color: #d5dbe4;
 
-// $theme-colors: (
-//   'info': tomato,
-//   'light': #1e293b,
-//   'danger': teal
-// );
+$theme-colors: (
+  'light': rgba(101,108,133,0.8),
+  'secondary': #0f39c8,
+  'primary': #0f39c8
+);
 
 /* import bootstrap to set changes */
 @import "../node_modules/bootstrap/scss/bootstrap";

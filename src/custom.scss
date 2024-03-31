@@ -1,0 +1,12 @@
+/* Variable overrides */
+$body-bg: #1e293b;
+$body-color: #d5dbe4;
+
+// $theme-colors: (
+//   'info': tomato,
+//   'light': #1e293b,
+//   'danger': teal
+// );
+
+/* import bootstrap to set changes */
+@import "../node_modules/bootstrap/scss/bootstrap";

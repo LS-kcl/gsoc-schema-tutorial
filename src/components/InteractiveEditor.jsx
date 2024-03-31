@@ -82,7 +82,7 @@ return(
           onChange={(e) => setInputCode(e.target.value)}
           padding={15}
           style={{
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "#0f172a",
           height: '30em',
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
@@ -115,7 +115,7 @@ return(
             </p>
           </TabPanel>
           {testCases?.map((test) => 
-              <TabPanel><h4>Expected Result: </h4><code>{test.is_valid.toString()}</code><h4>Test Case:</h4> <CodeEditor value={JSON.stringify(test.data, null, 2)} readOnly={true} language="js" padding={15} style={{ backgroundColor: "#f5f5f5", fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace', }} /> </TabPanel>)
+              <TabPanel><h4>Expected Result: </h4><code>{test.is_valid.toString()}</code><h4>Test Case:</h4> <CodeEditor value={JSON.stringify(test.data, null, 2)} readOnly={true} language="js" padding={15} style={{ backgroundColor: "#0f172a", fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace', }} /> </TabPanel>)
           }
         </Tabs>
     </>

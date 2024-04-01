@@ -7,16 +7,22 @@ return(
         <h1>{props.title?props.title:"Title missing"}</h1>
         {parse(props.page_source)}
         <div className="page-controls">
-          <button
-            className="btn btn-secondary"
-            onClick={props.prevPage}
-            style={{height: '40px',}}>Previous Page
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={props.nextPage}
-            style={{height: '40px',}}>Next Page
-          </button>
+          {
+            props.prevPageExists &&
+              <button
+                className="btn btn-secondary"
+                onClick={props.prevPage}
+                style={{height: '40px',}}>Previous Page
+              </button>
+          }
+          {
+            props.nextPageExists &&
+              <button
+                className="btn btn-secondary"
+                onClick={props.nextPage}
+                style={{height: '40px',}}>Next Page
+              </button>
+          }
         </div>
       </div>
     </>

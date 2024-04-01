@@ -40,6 +40,8 @@ export default function App() {
             title={pages[pageNum].title}
             prevPage={prevPage}
             nextPage={nextPage}
+            prevPageExists={pageNum>0}
+            nextPageExists={pageNum+1<pages.length}
           />
     </div>
     <div className="col-6">

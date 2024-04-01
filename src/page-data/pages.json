@@ -23,7 +23,7 @@
         "data": 42
       }
     ],
-    "page_source": "<h5>Introducing the interactive sandbox</h5><p>Have a look at the interactive sandbox to the right. Here you can type your own schemas, and test them agagainst the test cases we've added for you already.</p><p>This is what a sample schema looks like!</p><p>We use the <code>type</code> keyword to assert the type of object the JSON must match, in this case, we want to the JSON to be a string, and so we use the <code>string</code> keyword</p>"
+    "page_source": "<h5>Introducing the interactive sandbox</h5><p>Have a look at the interactive sandbox to the right. Here you can type your own schemas, and test them against the test cases we've added for you already.</p><p>We've pre-filled the interactive sandbox with what a sample schema looks like! The structure is similar to that of a JSON file</p><p>We use the <code>type</code> keyword to assert the type of object the JSON must match, in this case we want to the JSON to be a string, and so we use the <code>string</code> keyword</p>"
   },
     {"title": "Writing your first schema",
     "default_code":{
@@ -44,7 +44,7 @@
         "data": "Here's a sample string!"
       }
     ],
-    "page_source": "<p>Here we see the same schema from the previous step. Let's say we instead want to have the schema assert we want a number instead of a string. We can do this using the <code>number</code> keyword.</p><p>Modify the schema to match a number instead of a string. Use the 'reset code' button if you make a mistake, and the 'run tests' button when you're ready to try out your solution</p>"
+    "page_source": "<h5>Modifying an existing schema</h5><p>Here we see the same schema from the previous step. Let's say we instead want the schema assert we require a number instead of a string. We can do this using the <code>number</code> keyword.</p><p>Modify the schema to match a number instead of a string. Use the 'reset code' button if you make a mistake, and the 'run tests' button when you're ready to try out your solution</p>"
   },
     {"title": "Validating against empty schemas",
     "default_code":{
@@ -68,11 +68,11 @@
         "data": {"nested-string":"I'm a string in an object"}
       }
     ],
-    "page_source": "<h5>No matching rules?</h5><p>It's also important to know what happens when we don't have a matching rule or type</p><p>The schema provided does not have any rules associated with it. This means a well formed JSON of any type will pass</p> <p>Run the tests to see!</p>"
+    "page_source": "<h5>No matching rules?</h5><p>It's also important to know what happens when we don't have a matching rule or type</p><p>The schema provided does not have any rules associated with it. This means a well formed JSON of any type will pass. Run the tests to see!</p><h5>Why is this important?</h5><p>Many times, JSON files will have additional information that we are no interested in, or that isn't relevant to our project. While we could assert this data must exist and build a schema to validate against all values in the JSON, it's much simpler to just match the ones we need! Any other data in the JSON that isn't matched to a rule will be accepted.</p>"
   },
   {"title": "End of Project Proposal",
     "default_code": {},
     "test_cases": [],
-    "page_source": "<p>Thank you for taking the time to run through the project proposal</p><h5>Make your own content</h5><p>The demo content is generated from the pages.json file, and is fully customisable with HTML and and JSON test cases. Instructions to clone and install the repository to make your own live tutorials is available on my GitHub!</p>"
+    "page_source": "<h5>Thank you!</h5><p>Thank you for taking the time to run through the project proposal!</p><h5>Make your own content</h5><p>The demo content is entirely generated from the pages.json file, and is fully customisable with HTML and and JSON test cases. Instructions to clone and install the repository are available on my GitHub page, and feel free to play around and make your own live tutorials!</p>"
   }
 ]

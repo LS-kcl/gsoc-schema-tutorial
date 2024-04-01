@@ -34,7 +34,7 @@ export default function App() {
     <NavBar />
   </div>
 	<div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-    <div className="col-6">
+    <div className="col-md">
       <TutorialText
             page_source={pages[pageNum].page_source}
             title={pages[pageNum].title}
@@ -44,7 +44,7 @@ export default function App() {
             nextPageExists={pageNum+1<pages.length}
           />
     </div>
-    <div className="col-6">
+    <div className="col-md">
       <InteractiveEditor
             default_code={pages[pageNum].default_code}
             test_cases={pages[pageNum].test_cases}

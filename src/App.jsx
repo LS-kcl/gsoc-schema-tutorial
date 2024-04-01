@@ -46,7 +46,7 @@ export default function App() {
         <p class="lead">
           <a onClick={removeLandingPage} class="btn btn-lg btn-secondary">Get Started</a>
         </p>
-          <p>Visit the official <a href="#">JSON schema page</a></p>
+          <p>Visit the official <a href="https://json-schema.org/">JSON schema page</a></p>
       </main>
     </div>
     )

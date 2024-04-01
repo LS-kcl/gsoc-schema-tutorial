@@ -11,13 +11,13 @@ return(
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Specification</a>
+          <a class="nav-link" href="https://json-schema.org/specification">Specification</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Documentation</a>
+          <a class="nav-link" href="https://json-schema.org/learn/getting-started-step-by-step">Documentation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tooling</a>
+          <a class="nav-link" href="https://json-schema.org/implementations">Tooling</a>
         </li>
       </ul>
     </div>

@@ -39,10 +39,16 @@ export default function App() {
   if (showLandingPage){
     // Return landing page if not loaded
     return(
-    <>
-      <h1>Landing page goes here</h1>
-      <button onClick={removeLandingPage}>Get started</button>
-    </>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover centered">
+        <h1 class="cover-heading">The JSON Schema Tour</h1>
+        <p class="lead">Understand why we use JSON schemas, and how you can use them to process data quickly and securely</p>
+        <p class="lead">
+          <a onClick={removeLandingPage} class="btn btn-lg btn-secondary">Get Started</a>
+        </p>
+          <p>Visit the official <a href="#">JSON schema page</a></p>
+      </main>
+    </div>
     )
 
   } else {

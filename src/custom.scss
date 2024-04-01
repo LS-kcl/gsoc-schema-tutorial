@@ -8,5 +8,42 @@ $theme-colors: (
   'primary': #0f39c8
 );
 
+#root{
+  height: 100%;
+}
+/*
+ * Base structure
+ */
+.centered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .5rem 1rem;
+  font-weight: 700;
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
 /* import bootstrap to set changes */
 @import "../node_modules/bootstrap/scss/bootstrap";

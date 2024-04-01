@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Tabs, Tab, TabList, TabPanel } from "react-tabs"
 import 'react-tabs/style/react-tabs.css';
 import CodeEditor from '@uiw/react-textarea-code-editor';
+import parse from 'html-react-parser';
 
 export default function InteractiveEditor(props) {
   // Keep track of default_code as well
@@ -14,7 +15,7 @@ export default function InteractiveEditor(props) {
   const [inputCode, setInputCode] = useState(JSON.stringify(defaultCode, null, 2))
 
   // Keep track of execution output
-  // TYPE: String
+  // TYPE: String containing HTML
   const [consoleOutput, setConsoleOutput] = useState("Tests have not been run yet")
 
   // Keep track of test cases
@@ -54,9 +55,9 @@ export default function InteractiveEditor(props) {
       for (const test of props.test_cases) {
         const result = validator.validate(test.data);
         if (result.valid === test.is_valid) {
-            output += `Test ${i}: Passed! `;
+            output += `Test ${i}: Passed! <br>`;
         } else {
-            output += `Test ${i}: Failed `;
+            output += `Test ${i}: Failed <br>`;
         }
         i++;
       }
@@ -111,7 +112,7 @@ return(
           <TabPanel>
             <h3>Test status:</h3>
             <p>
-              {consoleOutput}
+              {parse("<p>" + consoleOutput + "</p>")}
             </p>
           </TabPanel>
           {testCases?.map((test) => 

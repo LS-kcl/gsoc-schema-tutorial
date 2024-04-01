@@ -46,6 +46,40 @@
     ],
     "page_source": "<h5>Modifying an existing schema</h5><p>Here we see the same schema from the previous step. Let's say we instead want the schema assert we require a number instead of a string. We can do this using the <code>number</code> keyword.</p><p>Modify the schema to match a number instead of a string. Use the 'reset code' button if you make a mistake, and the 'run tests' button when you're ready to try out your solution</p>"
   },
+  {"title": "Matching more complex objects",
+    "default_code":{
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "nested-string": {
+          "type":"string"
+        }
+      }
+    },
+    "test_cases": [
+      {
+        "is_valid": true,
+        "data": {"nested-string":"I'm a string in an object"}
+      },
+      {
+        "is_valid": false,
+        "data": {"nested-string": 42}
+      },
+      {
+        "is_valid": false,
+        "data": 42
+      },
+      {
+        "is_valid": false,
+        "data": "Hello World"
+      },
+      {
+        "is_valid": false,
+        "data": "Here's a sample string!"
+      }
+    ],
+    "page_source": "<h5>Dealing with nested objects</h5><p>So far, all of the object types we've seen so far have been simple types. However, JSON files will often contain objects nexted within other objects. To deal with this, we instead declare we are looking for a <code>type</code> of <code>object</code>. Having declared the object type, we can use the <code>properties</code> keyword to assert what properties we need.</p><p>Have a look at the sandbox to see what this looks like:</p><h5>Understanding the test results</h5><p>Reading through the tests 3, 4, and 5 are expected to return <code>false</code> because they are strings and numbers when we are looking for a value of type <code>object</code>. But why is test 2 expected to return <code>false</code>?</p><p>Test 2 is <code>false</code> because of the <code>properties</code> tag we've defined; we assert that in the object we're validating, the nested-string property must have a <code>type</code> of <code>string</code>.</p>"
+  },
     {"title": "Validating against empty schemas",
     "default_code":{
       "$schema": "https://json-schema.org/draft/2020-12/schema"
